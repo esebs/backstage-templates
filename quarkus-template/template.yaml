@@ -1,0 +1,44 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: java-service-template
+  title: Java Service Template
+  description: Generates a Java service with a custom package structure.
+spec:
+  owner: team@example.com
+  parameters:
+    - title: Project Information
+      properties:
+        groupId:
+          title: Group ID
+          type: string
+          description: The group ID for your project (e.g., com.example)
+        artifactId:
+          title: Artifact ID
+          type: string
+          description: The artifact ID for your project
+        version:
+          title: Version
+          type: string
+          description: The version of your project (e.g., 1.0.0)
+        package:
+          title: Package Name
+          type: string
+          description: The base Java package name (e.g., com.example.myapp)
+  steps:
+    - id: fetch-content
+      name: Fetch Template
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          groupId: '{{ parameters.groupId }}'
+          artifactId: '{{ parameters.artifactId }}'
+          version: '{{ parameters.version }}'
+          package: '{{ parameters.package }}'
+    - id: download-zip
+      name: Download ZIP
+      action: download:artifact
+      input:
+        artifactName: skeleton.zip
+        outputFileName: "{{ parameters.artifactId }}-project.zip"
