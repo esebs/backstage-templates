@@ -40,5 +40,5 @@ spec:
       name: Download ZIP
       action: download:artifact
       input:
-        artifactName: skeleton.zip
+        artifactName: skeleton.zip 
         outputFileName: "{{ parameters.artifactId }}-project.zip"
