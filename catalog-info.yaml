@@ -1,0 +1,8 @@
+catalog:
+  locations:
+    - type: url
+      target: https://github.com/esebs/backstage-templates/blob/main/quarkus-template/template.yaml
+      rules:
+        - allow: [Template]
+    - type: file
+      target: template.yaml # Backstage will expect the file to be in packages/backend/template.yaml
