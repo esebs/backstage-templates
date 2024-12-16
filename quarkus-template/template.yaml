@@ -3,42 +3,41 @@ kind: Template
 metadata:
   name: java-service-template
   title: Java Service Template
-  description: Generates a Java service with a custom package structure.
+  description: Generates a simple Java service with a customizable package structure.
 spec:
   owner: team@example.com
   parameters:
     - title: Project Information
       properties:
         groupId:
-          title: Group ID
           type: string
           description: The group ID for your project (e.g., com.example)
+          default: "com.example"
         artifactId:
-          title: Artifact ID
           type: string
           description: The artifact ID for your project
         version:
-          title: Version
           type: string
           description: The version of your project (e.g., 1.0.0)
+          default: "1.0.0"
         package:
-          title: Package Name
           type: string
           description: The base Java package name (e.g., com.example.myapp)
+          default: "{{ parameters.groupId }}.{{ parameters.artifactId }}"
   steps:
     - id: fetch-content
       name: Fetch Template
       action: fetch:template
       input:
-        url: ./skeleton
+        url: https://github.com/your-repository/java-service-template
         values:
           groupId: '{{ parameters.groupId }}'
           artifactId: '{{ parameters.artifactId }}'
           version: '{{ parameters.version }}'
           package: '{{ parameters.package }}'
     - id: download-zip
-      name: Download ZIP
+      name: Download Project ZIP
       action: download:artifact
       input:
-        artifactName: skeleton.zip 
-        outputFileName: "{{ parameters.artifactId }}-project.zip"
+        artifactName: '{{ parameters.artifactId }}-service.zip'
+        outputFileName: '{{ parameters.artifactId }}-service-project.zip'
