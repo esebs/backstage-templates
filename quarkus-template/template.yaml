@@ -17,6 +17,7 @@ spec:
         artifactId:
           type: string
           description: The artifact ID for your project
+          default: "artifactId"
         version:
           type: string
           description: The version of your project (e.g., 1.0.0)
@@ -43,10 +44,10 @@ spec:
       input:
         url: https://github.com/esebs/backstage-templates/tree/main/quarkus-template/skeleton
         values:
-          groupId: '{{ parameters.groupId }}'
-          artifactId: '{{ parameters.artifactId }}'
-          version: '{{ parameters.version }}'
-          package: '{{ parameters.package }}'
+          groupId: ${{ parameters.groupId }}
+          artifactId: ${{ parameters.artifactId }}
+          version: ${{ parameters.version }}
+          package: ${{ parameters.package }}
     
     # This step publishes the contents of the working directory to GitHub.
     - id: publish
