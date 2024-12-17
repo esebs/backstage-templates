@@ -48,7 +48,7 @@ spec:
           artifactId: ${{ parameters.artifactId }}
           version: ${{ parameters.version }}
           package: ${{ parameters.package }}
-        - id: publish
+    - id: publish
       name: Publish
       action: publish:github
       input:
