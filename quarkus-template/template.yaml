@@ -25,7 +25,7 @@ spec:
         package:
           type: string
           description: The base Java package name (e.g., com.example.myapp)
-          default: "{{ parameters.groupId }}.{{ parameters.artifactId }}"
+          default: ${{ parameters.groupId }}"."${{ parameters.artifactId }}
     - title: Choose a location
       required:
         - repoUrl
