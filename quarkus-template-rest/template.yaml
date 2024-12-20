@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: java-service-template
+  name: quarkus-rest-service-template
   title: Quarkus with Rest CLient
   description: Generates a simple Quarkus service with a Rest Client ready for use.
 spec:
