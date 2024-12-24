@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: quarkus-rest-service-template
-  title: Quarkus with Rest CLient
+  title: Quarkus with Rest Client
   description: Generates a simple Quarkus service with a Rest Client ready for use.
 spec:
   owner: AgileIntegration

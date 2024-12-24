@@ -48,6 +48,7 @@ spec:
           artifactId: ${{ parameters.artifactId }}
           version: ${{ parameters.version }}
           package: ${{ parameters.package }}
+          directory: "{{ values.parameters | replace('.', '/') }}"
     - id: publish
       name: Publish
       action: publish:github
