@@ -4,10 +4,10 @@ import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.security.TestSecurity;
 import jakarta.ws.rs.core.MediaType;
-{package}.application.interfaces.inbound.ProcessRequest;
-{package}.infrastructure.inbound.rest.dto.request.RequestDTO;
+import ${{ values.package }}.application.interfaces.inbound.ProcessRequest;
+import ${{ values.package }}.infrastructure.inbound.rest.dto.request.RequestDTO;
 import ${{ values.package }}.infrastructure.inbound.rest.dto.response.ResponseDTO;
-{package}.utils.errors.dtos.ErrorResponse;
+import ${{ values.package }}.utils.errors.dtos.ErrorResponse;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
